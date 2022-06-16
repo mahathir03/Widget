@@ -44,7 +44,7 @@ class ImplisitIntent : AppCompatActivity() {
         binding.btnBrowser.setOnClickListener {
             val url = "https://google.com"
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.setData(Uri.parse(url))
+            intent.data = Uri.parse(url)
             startActivity(intent)
 
         }

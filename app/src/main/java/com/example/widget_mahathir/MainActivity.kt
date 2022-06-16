@@ -14,6 +14,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        val getData = intent.getParcelableExtra<ModelLogin>("data")
+        binding.txtUserName.text = getData?.username.toString()
+        binding.txtPassword.text = getData?.password.toString()
+
+
         binding.btnIntentWidget.setOnClickListener {
             val intent = Intent(this, widget::class.java)
             startActivity(intent)
